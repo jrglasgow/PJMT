@@ -178,7 +178,7 @@
                             echo "<p><a href=\"Edit_File_Info_Example.php?jpeg_fname=" . strip_tags($filename) . "\" >Re-Edit Photoshop File Info</a></p>\n";
                             echo "<br><br>\n";
                             echo "<p>Below is the updated image, you can save it and look at the changed metadata in your favorite image editor</p>\n";
-                            echo "<p><img src=\"$filename\" ></p>\n";
+                            echo "<p><img src=\"" . strip_tags($filename) . "\" ></p>\n";
 
 
                     ?>
