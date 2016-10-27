@@ -104,6 +104,12 @@
                                 }
                         }
 
+
+                        // Output the title
+                        echo "<title>Metadata details for " . strip_tags($filename) . "</title>";
+
+
+
                  ?>
 
                 <title>Metadata details for <?php echo $filename; ?></title>
@@ -115,7 +121,11 @@
                     <p >Interpreted using: <a href="http://www.ozhiker.com/electronics/pjmt/">PHP JPEG Metadata Toolkit version <?php echo $GLOBALS['Toolkit_Version'] ?>, Copyright (C) 2004 Evan Hunter</a></p>                <!-- Change: displayed toolkit version numbers to reference Toolkit_Version.php - as of version 1.11 -->
                     <br/>
 
-                    <h2><b><u>Metadata for &quot;<?php echo $filename; ?>&quot;</u></b></h2>
+                <p >Interpreted using: <a href="http://www.ozhiker.com/electronics/pjmt/">PHP JPEG Metadata Toolkit version <?php echo $GLOBALS['Toolkit_Version'] ?>, Copyright (C) 2004 Evan Hunter</a></p>                <!-- Change: displayed toolkit version numbers to reference Toolkit_Version.php - as of version 1.11 -->
+                <br>
+
+                <h2><B><U>Metadata for &quot;<?php echo strip_tags($filename); ?>&quot;</U></B></h2>
+
 
 
                     <!-- Output the EXIF Information -->
