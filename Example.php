@@ -117,6 +117,10 @@
                                 }
                         }
 
+
+                        // Output the title
+                        echo "<title>Metadata details for " . strip_tags($filename) . "</title>";
+
                         // Retrieve the header information
                         $jpeg_header_data = get_jpeg_header_data( $filename );
 
@@ -132,8 +136,19 @@
                         <br/>
                         <br/>
 
-                        <h1><b><u>Metadata for &quot;<?php echo $filename; ?>&quot;</u></b></h1>
-                        <br/>
+                        <p>Interpreted using: <a href="http://www.ozhiker.com/electronics/pjmt/" >PHP JPEG Metadata Toolkit version <?php echo $GLOBALS['Toolkit_Version'] ?>, Copyright (C) 2004 Evan Hunter</a></p>    <!-- Change: displayed toolkit version numbers to reference Toolkit_Version.php - as of version 1.11 -->
+                        <br>
+                        <br>
+        
+                        <h1><B><U>Metadata for &quot;<?php echo strip_tags($filename); ?>&quot;</U></B></h1>
+                        <br>
+        
+                        <!-- Output a link allowing user to edit the Photoshop File Info
+                             Change: Allow this example file to be easily relocatable - as of version 1.11
+                        -->
+                        <?php  $relative_filename = get_relative_path( $filename, $Toolkit_Dir );  ?>
+                        <h4><a href="<?php echo $Toolkit_Dir."Edit_File_Info_Example.php?jpeg_fname=$relative_filename"; ?>" >Click here to edit the Photoshop File Info for this file</a></h4>
+                        <br>
 
                         <!-- Output a link allowing user to edit the Photoshop File Info
                              Change: Allow this example file to be easily relocatable - as of version 1.11
@@ -214,7 +229,8 @@
                         <hr/>
                         <br/>
 
-                        <!-- Display the original image -->
+                        <h2>Original Image</h2>
+                        <?php   echo "<img src=\"" . strip_tags($filename) . "\">";  ?>
 
                         <h2>Original Image</h2>
                         <?php   echo "<img src=\"$filename\">";  ?>
