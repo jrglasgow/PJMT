@@ -150,19 +150,11 @@
                                     exit( );
                             }
 
-<<<<<<< HEAD
                             // Attempt to write the new JPEG file
                             if ( FALSE == put_jpeg_header_data( $filename, $filename, $jpeg_header_data ) )
                             {
                                     // Writing of the new file didn't work - output error message
-                                    echo "Error - Failure to write new JPEG : $filename <br/>\n";
-=======
-                        // Attempt to write the new JPEG file
-                        if ( FALSE == put_jpeg_header_data( $filename, $filename, $jpeg_header_data ) )
-                        {
-                                // Writing of the new file didn't work - output error message
-                                echo "Error - Failure to write new JPEG : " . strip_tags($filename) . " <br>\n";
->>>>>>> 9cf0d4a... sanitize user input for edit form
+                                    echo "Error - Failure to write new JPEG : " . strip_tags($filename) . " <br>\n";
 
                                     // Output HTML with the form and data which was
                                     // sent, to allow the user to fix it
@@ -181,21 +173,12 @@
 
                             // Output information about new file
 
-<<<<<<< HEAD
-                            echo "<h1>DONE! - $filename updated</h1>\n";
-                            echo "<p><a href=\"Example.php?jpeg_fname=$filename\" >View Full Metatdata Information</a></p>\n";
-                            echo "<p><a href=\"Edit_File_Info_Example.php?jpeg_fname=$filename\" >Re-Edit Photoshop File Info</a></p>\n";
-                            echo "<br/><br/>\n";
+                            echo "<h1>DONE! - " . strip_tags($filename) . " updated</h1>\n";
+                            echo "<p><a href=\"Example.php?jpeg_fname=" . strip_tags($filename) . "\" >View Full Metatdata Information</a></p>\n";
+                            echo "<p><a href=\"Edit_File_Info_Example.php?jpeg_fname=" . strip_tags($filename) . "\" >Re-Edit Photoshop File Info</a></p>\n";
+                            echo "<br><br>\n";
                             echo "<p>Below is the updated image, you can save it and look at the changed metadata in your favorite image editor</p>\n";
                             echo "<p><img src=\"$filename\" ></p>\n";
-=======
-                        echo "<h1>DONE! - $filename updated</h1>\n";
-                        echo "<p><a href=\"Example.php?jpeg_fname=$filename\" >View Full Metatdata Information</a></p>\n";
-                        echo "<p><a href=\"Edit_File_Info_Example.php?jpeg_fname=" . strip_tags($filename) . "\" >Re-Edit Photoshop File Info</a></p>\n";
-                        echo "<br><br>\n";
-                        echo "<p>Below is the updated image, you can save it and look at the changed metadata in your favorite image editor</p>\n";
-                        echo "<p><img src=\"$filename\" ></p>\n";
->>>>>>> 9cf0d4a... sanitize user input for edit form
 
 
                     ?>
