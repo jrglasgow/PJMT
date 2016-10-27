@@ -240,7 +240,7 @@
                                 </td>
                                 <td>
                                         <?php
-                                        echo "<input size=49 name=\"title\" type=\"text\" value=\"". $new_ps_file_info_array[ 'title' ] ."\">";
+                                        echo "<input size=49 name=\"title\" type=\"text\" value=\"". htmlspecialchars($new_ps_file_info_array[ 'title' ]) ."\">";
                                         ?>
                                 </td>
                         </tr>
@@ -251,7 +251,7 @@
                                 </td>
                                 <td>
                                         <?php
-                                        echo "<input size=49 name=\"author\" type=\"text\" value=\"". $new_ps_file_info_array[ 'author' ] ."\">";
+                                        echo "<input size=49 name=\"author\" type=\"text\" value=\"". htmlspecialchars($new_ps_file_info_array[ 'author' ]) ."\">";
                                         ?>
                                 </td>
                         </tr>
@@ -262,7 +262,7 @@
                                 </td>
                                 <td>
                                         <?php
-                                                echo "<input size=49 name=\"authorsposition\" type=\"text\" value=\"". $new_ps_file_info_array[ 'authorsposition' ] ."\"> - Note: not used in Photoshop 7 or higher";
+                                                echo "<input size=49 name=\"authorsposition\" type=\"text\" value=\"". htmlspecialchars($new_ps_file_info_array[ 'authorsposition' ]) ."\"> - Note: not used in Photoshop 7 or higher";
                                         ?>
                                 </td>
                         </tr>
@@ -272,7 +272,7 @@
                                         Description
                                 </td>
                                 <td>
-                                        <textarea name="caption" rows=3 cols=37 wrap="off"><?php echo $new_ps_file_info_array[ 'caption' ]; ?></textarea>
+                                        <textarea name="caption" rows=3 cols=37 wrap="off"><?php echo htmlspecialchars($new_ps_file_info_array[ 'caption' ]); ?></textarea>
                                 </td>
                         </tr>
 
@@ -282,7 +282,7 @@
                                 </td>
                                 <td>
                                         <?php
-                                        echo "<input size=49 name=\"captionwriter\" type=\"text\" value=\"". $new_ps_file_info_array[ 'captionwriter' ] ."\">";
+                                        echo "<input size=49 name=\"captionwriter\" type=\"text\" value=\"". htmlspecialchars($new_ps_file_info_array[ 'captionwriter' ]) ."\">";
                                         ?>
                                 </td>
                         </tr>
@@ -296,7 +296,7 @@
                                         <textarea name="keywords" rows=3 cols=37 wrap="off"><?php
                                                                                                 foreach( $new_ps_file_info_array[ 'keywords' ] as $keyword )
                                                                                                 {
-                                                                                                        echo "$keyword&#xA;";
+                                                                                                        echo htmlspecialchars("$keyword&#xA;");
                                                                                                 }
                                                                                             ?></textarea>
                                 </td>
@@ -348,7 +348,7 @@
                                         Copyright Notice
                                 </td>
                                 <td>
-                                        <textarea name="copyrightnotice" rows=3 cols=37 wrap="off"><?php echo $new_ps_file_info_array[ 'copyrightnotice' ]; ?></textarea>
+                                        <textarea name="copyrightnotice" rows=3 cols=37 wrap="off"><?php echo htmlspecialchars($new_ps_file_info_array[ 'copyrightnotice' ]); ?></textarea>
                                 </td>
                         </tr>
 
@@ -359,10 +359,10 @@
                                 </td>
                                 <td>
                                         <?php
-                                        echo "<input size=49 name=\"ownerurl\" type=\"text\" value=\"". $new_ps_file_info_array[ 'ownerurl' ] ."\">\n";
+                                        echo "<input size=49 name=\"ownerurl\" type=\"text\" value=\"". htmlspecialchars$new_ps_file_info_array[ 'ownerurl' ]) ."\">\n";
                                         if ($new_ps_file_info_array[ 'ownerurl' ] != "" )
                                         {
-                                                echo "<a href=\"". $new_ps_file_info_array[ 'ownerurl' ] ."\" > (". $new_ps_file_info_array[ 'ownerurl' ] .")</a>\n";
+                                                echo "<a href=\"". $new_ps_file_info_array[ 'ownerurl' ] ."\" > (". htmlspecialchars($new_ps_file_info_array[ 'ownerurl' ]) .")</a>\n";
                                         }
                                         ?>
 
@@ -376,7 +376,7 @@
                                 </td>
                                 <td>
                                         <?php
-                                        echo "<input size=49 name=\"category\" type=\"text\" value=\"". $new_ps_file_info_array[ 'category' ] ."\">\n";
+                                        echo "<input size=49 name=\"category\" type=\"text\" value=\"". htmlspecialchars($new_ps_file_info_array[ 'category' ]) ."\">\n";
                                         ?>
 
                                 </td>
@@ -390,7 +390,7 @@
                                         <textarea name="supplementalcategories" rows=3 cols=37 wrap="off"><?php
                                                                                                 foreach( $new_ps_file_info_array[ 'supplementalcategories' ] as $supcat )
                                                                                                 {
-                                                                                                        echo "$supcat&#xA;";
+                                                                                                        echo htmlspecialchars("$supcat&#xA;");
                                                                                                 }
                                                                                             ?>
                                         </textarea>
@@ -405,7 +405,7 @@
                                 </td>
                                 <td>
                                         <?php
-                                                echo "<input size=49 name=\"date\" type=\"text\" value=\"". $new_ps_file_info_array[ 'date' ] ."\">";
+                                                echo "<input size=49 name=\"date\" type=\"text\" value=\"". htmlspecialchars($new_ps_file_info_array[ 'date' ]) ."\">";
                                         ?>
                                         (Note date must be YYYY-MM-DD format)
                                 </td>
@@ -417,7 +417,7 @@
                                 </td>
                                 <td>
                                         <?php
-                                                echo "<input size=49 name=\"city\" type=\"text\" value=\"". $new_ps_file_info_array[ 'city' ] ."\">";
+                                                echo "<input size=49 name=\"city\" type=\"text\" value=\"". htmlspecialchars($new_ps_file_info_array[ 'city' ]) ."\">";
                                         ?>
                                 </td>
                         </tr>
@@ -429,7 +429,7 @@
                                 </td>
                                 <td>
                                         <?php
-                                                echo "<input size=49 name=\"state\" type=\"text\" value=\"". $new_ps_file_info_array[ 'state' ] ."\">";
+                                                echo "<input size=49 name=\"state\" type=\"text\" value=\"". htmlspecialchars($new_ps_file_info_array[ 'state' ]) ."\">";
                                         ?>
                                 </td>
                         </tr>
@@ -441,7 +441,7 @@
                                 </td>
                                 <td>
                                         <?php
-                                                echo "<input size=49 name=\"country\" type=\"text\" value=\"". $new_ps_file_info_array[ 'country' ] ."\">";
+                                                echo "<input size=49 name=\"country\" type=\"text\" value=\"". htmlspecialchars($new_ps_file_info_array[ 'country' ]) ."\">";
                                         ?>
                                 </td>
                         </tr>
@@ -454,7 +454,7 @@
                                 </td>
                                 <td>
                                         <?php
-                                                echo "<input size=49 name=\"credit\" type=\"text\" value=\"". $new_ps_file_info_array[ 'credit' ] ."\">";
+                                                echo "<input size=49 name=\"credit\" type=\"text\" value=\"". htmlspecialchars($new_ps_file_info_array[ 'credit' ]) ."\">";
                                         ?>
                                 </td>
                         </tr>
@@ -466,7 +466,7 @@
                                 </td>
                                 <td>
                                         <?php
-                                                echo "<input size=49 name=\"source\" type=\"text\" value=\"". $new_ps_file_info_array[ 'source' ] ."\">";
+                                                echo "<input size=49 name=\"source\" type=\"text\" value=\"". htmlspecialchars($new_ps_file_info_array[ 'source' ]) ."\">";
                                         ?>
                                 </td>
                         </tr>
@@ -478,7 +478,7 @@
                                         Headline
                                 </td>
                                 <td>
-                                        <textarea name="headline" rows=3 cols=37 wrap="off"><?php echo $new_ps_file_info_array[ 'headline' ]; ?></textarea>
+                                        <textarea name="headline" rows=3 cols=37 wrap="off"><?php echo htmlspecialchars($new_ps_file_info_array[ 'headline' ]); ?></textarea>
                                 </td>
                         </tr>
 
@@ -489,7 +489,7 @@
                                         Instructions
                                 </td>
                                 <td>
-                                        <textarea name="instructions" rows=3 cols=37 wrap="off"><?php echo $new_ps_file_info_array[ 'instructions' ]; ?></textarea>
+                                        <textarea name="instructions" rows=3 cols=37 wrap="off"><?php echo htmlspecialchars($new_ps_file_info_array[ 'instructions' ]); ?></textarea>
                                 </td>
                         </tr>
 
@@ -499,7 +499,7 @@
                                         Transmission Reference
                                 </td>
                                 <td>
-                                        <textarea name="transmissionreference" rows=3 cols=37 wrap="off"><?php echo $new_ps_file_info_array[ 'transmissionreference' ]; ?></textarea>
+                                        <textarea name="transmissionreference" rows=3 cols=37 wrap="off"><?php echo htmlspecialchars($new_ps_file_info_array[ 'transmissionreference' ]); ?></textarea>
                                 </td>
                         </tr>
 
@@ -509,7 +509,7 @@
                                 </td>
                                 <td>
                                         <?php
-                                                echo "<input size=49 name=\"jobname\" type=\"text\" value=\"". $new_ps_file_info_array[ 'jobname' ] ."\"> - Note: not used in Photoshop CS";
+                                                echo "<input size=49 name=\"jobname\" type=\"text\" value=\"". htmlspecialchars($new_ps_file_info_array[ 'jobname' ]) ."\"> - Note: not used in Photoshop CS";
                                         ?>
                                 </td>
                         </tr>
